@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SimpleDemoVC.swift
 //  UIBezierPathDemo
 //
 //  Created by Chiao-Te Ni on 2018/7/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseVC {
+class SimpleDemoVC: BaseVC {
 
     @IBOutlet var switchBtns: [UISwitch]!
     @IBOutlet var ptSliders: [UISlider]!
