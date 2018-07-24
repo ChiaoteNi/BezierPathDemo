@@ -36,19 +36,18 @@ class ElasticityView: UIView {
         originPoint = CGPoint(x: (rect.width) / 2, y: rect.height)
         pointView.center = originPoint
         pointView.frame.size = CGSize(width: width, height: width)
-        pointView.backgroundColor = .clear
         
         shapeLayer.frame = rect
         shapeLayer.path = UIBezierPath(rect: rect).cgPath
-        shapeLayer.fillColor = UIColor.orange.cgColor
     }
     
     private func setup() {
         backgroundColor = .clear
-        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.fillColor = UIColor.orange.cgColor
         layer.addSublayer(shapeLayer)
         
-        pointView.backgroundColor = UIColor.orange
+        // 做彈跳效果用
+        pointView.backgroundColor = .clear
         addSubview(pointView)
         
         displayLink = CADisplayLink(target: self, selector: #selector(updateLayer))

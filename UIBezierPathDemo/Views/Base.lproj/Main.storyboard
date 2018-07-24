@@ -23,21 +23,28 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1o-5F-hvq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
                                         <state key="normal" title="Simple BezierPath Demo"/>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="presentation" id="qfp-ir-k9y"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-za-r9N" userLabel="Hamburger Animation">
+                                        <rect key="frame" x="0.0" y="162" width="375" height="161.5"/>
+                                        <state key="normal" title="Hamburger Animation"/>
+                                        <connections>
+                                            <segue destination="Odi-xi-WNX" kind="presentation" id="Q0z-pN-ixm"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-zQ-vmE">
-                                        <rect key="frame" x="0.0" y="215.5" width="375" height="216"/>
+                                        <rect key="frame" x="0.0" y="323.5" width="375" height="162"/>
                                         <state key="normal" title="Wave Animation"/>
                                         <connections>
                                             <segue destination="96C-4K-IsA" kind="presentation" id="kij-R3-931"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vts-ql-Vl7">
-                                        <rect key="frame" x="0.0" y="431.5" width="375" height="215.5"/>
+                                        <rect key="frame" x="0.0" y="485.5" width="375" height="161.5"/>
                                         <state key="normal" title="Elasticity Animation"/>
                                         <connections>
                                             <segue destination="y3X-iJ-b1x" kind="presentation" id="4gA-PR-Bw8"/>
@@ -58,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lZ-Hl-TmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1318" y="718"/>
+            <point key="canvasLocation" x="-1956" y="1093"/>
         </scene>
         <!--Elasticity DemoVC-->
         <scene sceneID="zTR-Ul-3v8">
@@ -87,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPx-x9-RsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="1470"/>
+            <point key="canvasLocation" x="33" y="2121"/>
         </scene>
         <!--Wave DemoVC-->
         <scene sceneID="TOl-iv-Ii0">
@@ -128,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAW-gw-9qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="717"/>
+            <point key="canvasLocation" x="30" y="1420"/>
         </scene>
         <!--Simple DemoVC-->
         <scene sceneID="tne-QT-ifu">
@@ -277,73 +284,99 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4KJ-bX-jbt">
                                         <rect key="frame" x="0.0" y="158.5" width="355" height="30"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="fS4-8g-xm1">
-                                                <rect key="frame" x="-2" y="0.0" width="166.5" height="31"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="fS4-8g-xm1">
+                                                <rect key="frame" x="-2" y="0.0" width="154" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="cdn-Lx-bay"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="ptValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vpm-ju-klJ"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-IF-EQ4">
-                                                <rect key="frame" x="190.5" y="0.0" width="166.5" height="31"/>
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-IF-EQ4">
+                                                <rect key="frame" x="203" y="0.0" width="154" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="ToM-Ye-ATL"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="ptValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ofg-Tz-P3U"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="fS4-8g-xm1" firstAttribute="width" secondItem="eoY-IF-EQ4" secondAttribute="width" id="hhO-nO-Y3q"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="D39-fv-oFV">
                                         <rect key="frame" x="0.0" y="189" width="355" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startAngle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="io5-T9-aM1">
-                                                <rect key="frame" x="0.0" y="7" width="167.5" height="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="6.2800000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Vnx-U9-ATK">
                                                 <rect key="frame" x="185.5" y="0.0" width="171.5" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="rT5-qc-wDr"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="angleValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Xn-Ll-c9F"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="io5-T9-aM1" secondAttribute="bottom" id="MhE-nT-m3l"/>
+                                            <constraint firstItem="io5-T9-aM1" firstAttribute="leading" secondItem="D39-fv-oFV" secondAttribute="leading" id="o1N-aC-pBF"/>
+                                            <constraint firstItem="io5-T9-aM1" firstAttribute="top" secondItem="D39-fv-oFV" secondAttribute="top" id="x7y-uB-c2U"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VaN-xK-qhc">
                                         <rect key="frame" x="0.0" y="220" width="355" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="endAngle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85v-aA-diT">
-                                                <rect key="frame" x="0.0" y="7" width="173.5" height="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="173.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="6.2800000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="SaN-h2-04R">
                                                 <rect key="frame" x="179.5" y="0.0" width="177.5" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="7f8-de-GR2"/>
+                                                </constraints>
                                                 <connections>
                                                     <action selector="angleValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Bpr-Aa-YSD"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="85v-aA-diT" secondAttribute="bottom" id="6Au-Rw-TE3"/>
+                                            <constraint firstItem="85v-aA-diT" firstAttribute="leading" secondItem="VaN-xK-qhc" secondAttribute="leading" id="DHm-sZ-I8Z"/>
+                                            <constraint firstItem="SaN-h2-04R" firstAttribute="top" secondItem="VaN-xK-qhc" secondAttribute="top" id="Ii4-qf-ere"/>
+                                            <constraint firstItem="85v-aA-diT" firstAttribute="top" secondItem="VaN-xK-qhc" secondAttribute="top" id="WZ5-64-cWm"/>
+                                            <constraint firstAttribute="bottom" secondItem="SaN-h2-04R" secondAttribute="bottom" id="qoq-1H-uSW"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="D39-fv-oFV" firstAttribute="height" secondItem="VaN-xK-qhc" secondAttribute="height" id="3rj-sO-avZ"/>
                                     <constraint firstItem="4KJ-bX-jbt" firstAttribute="leading" secondItem="845-0U-hl2" secondAttribute="leading" id="4EL-lE-Qw7"/>
                                     <constraint firstItem="qNa-dI-Tps" firstAttribute="leading" secondItem="845-0U-hl2" secondAttribute="leading" id="J5V-2f-XYX"/>
                                     <constraint firstItem="yzn-Sv-IwU" firstAttribute="width" secondItem="QJz-4S-uc5" secondAttribute="width" id="LfA-31-5Ez"/>
                                     <constraint firstItem="QJz-4S-uc5" firstAttribute="leading" secondItem="845-0U-hl2" secondAttribute="leading" id="MbE-Da-atQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="D39-fv-oFV" secondAttribute="trailing" id="W29-iq-OMk"/>
                                     <constraint firstAttribute="trailing" secondItem="QJz-4S-uc5" secondAttribute="trailing" id="YCI-Q4-w33"/>
                                     <constraint firstItem="Sna-xG-Lia" firstAttribute="height" secondItem="qNa-dI-Tps" secondAttribute="height" id="aZU-10-XlH"/>
                                     <constraint firstItem="bHZ-Vc-MX7" firstAttribute="width" secondItem="4KJ-bX-jbt" secondAttribute="width" id="b3F-aa-mdP"/>
-                                    <constraint firstItem="io5-T9-aM1" firstAttribute="trailing" secondItem="85v-aA-diT" secondAttribute="trailing" id="cMW-xE-qLm"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="cY9-5h-G18"/>
                                     <constraint firstAttribute="trailing" secondItem="4KJ-bX-jbt" secondAttribute="trailing" id="fAK-7S-5Ik"/>
                                     <constraint firstItem="bHZ-Vc-MX7" firstAttribute="height" secondItem="4KJ-bX-jbt" secondAttribute="height" id="fX5-di-YrR"/>
                                     <constraint firstItem="Sna-xG-Lia" firstAttribute="width" secondItem="qNa-dI-Tps" secondAttribute="width" id="h6k-Uc-UOd"/>
+                                    <constraint firstItem="D39-fv-oFV" firstAttribute="leading" secondItem="845-0U-hl2" secondAttribute="leading" id="hVV-aJ-28b"/>
+                                    <constraint firstItem="VaN-xK-qhc" firstAttribute="leading" secondItem="845-0U-hl2" secondAttribute="leading" id="hXQ-z0-8US"/>
                                     <constraint firstItem="yzn-Sv-IwU" firstAttribute="height" secondItem="QJz-4S-uc5" secondAttribute="height" id="i9C-cz-2zC"/>
                                     <constraint firstAttribute="trailing" secondItem="qNa-dI-Tps" secondAttribute="trailing" id="keY-gY-hCc"/>
+                                    <constraint firstAttribute="trailing" secondItem="VaN-xK-qhc" secondAttribute="trailing" id="uxa-Qp-Di9"/>
+                                    <constraint firstItem="D39-fv-oFV" firstAttribute="height" secondItem="4KJ-bX-jbt" secondAttribute="height" id="x4P-HK-dU9"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yRJ-WV-zOE">
@@ -434,6 +467,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+        <!--Hamburger DemoVC-->
+        <scene sceneID="PGd-39-RPM">
+            <objects>
+                <viewController id="Odi-xi-WNX" customClass="HamburgerDemoVC" customModule="UIBezierPathDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UBC-zJ-F4L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOG-5Q-WI3" customClass="HamburgerView" customModule="UIBezierPathDemo" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="AdI-my-wRN"/>
+                                    <constraint firstAttribute="height" constant="100" id="UAn-Pd-zgA"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-lx-M69">
+                                <rect key="frame" x="164" y="475" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnPressed:" destination="Odi-xi-WNX" eventType="touchUpInside" id="4dr-4T-wwQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HOG-5Q-WI3" firstAttribute="centerX" secondItem="UBC-zJ-F4L" secondAttribute="centerX" id="Ap8-FP-KMu"/>
+                            <constraint firstItem="HOG-5Q-WI3" firstAttribute="centerY" secondItem="UBC-zJ-F4L" secondAttribute="centerY" id="qIe-f4-jjw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Jz-KY-XHH"/>
+                    </view>
+                    <connections>
+                        <outlet property="hamburgerView" destination="HOG-5Q-WI3" id="RfG-st-xEL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDA-ft-vEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31" y="706"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40B999D2106D91700D77876 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40B999C2106D91700D77876 /* View.xib */; };
+		F40B99B5210732F500D77876 /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B99B4210732F500D77876 /* HamburgerView.swift */; };
+		F40B99B7210737B100D77876 /* HamburgerDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B99B6210737B100D77876 /* HamburgerDemoVC.swift */; };
 		F4298E2D2103055200AC4D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4298E2C2103055200AC4D67 /* AppDelegate.swift */; };
 		F4298E2F2103055200AC4D67 /* SimpleDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4298E2E2103055200AC4D67 /* SimpleDemoVC.swift */; };
 		F4298E322103055200AC4D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4298E302103055200AC4D67 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F40B999C2106D91700D77876 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		F40B99B4210732F500D77876 /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
+		F40B99B6210737B100D77876 /* HamburgerDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerDemoVC.swift; sourceTree = "<group>"; };
 		F4298E292103055200AC4D67 /* UIBezierPathDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIBezierPathDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4298E2C2103055200AC4D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4298E2E2103055200AC4D67 /* SimpleDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDemoVC.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 				F4298E2E2103055200AC4D67 /* SimpleDemoVC.swift */,
 				F46495EC2105A9520038C3F0 /* ElasticityDemoVC.swift */,
 				F4D11E2C210647E600679403 /* WaveDemoVC.swift */,
+				F40B99B6210737B100D77876 /* HamburgerDemoVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -91,8 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				F46495EE2105A9770038C3F0 /* ElasticityView.swift */,
+				F40B99B4210732F500D77876 /* HamburgerView.swift */,
 				F4D11E2A210640C800679403 /* WaveView.swift */,
 				F4298E302103055200AC4D67 /* Main.storyboard */,
+				F40B999C2106D91700D77876 /* View.xib */,
 				F4298E352103055300AC4D67 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -156,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40B999D2106D91700D77876 /* View.xib in Resources */,
 				F4298E372103055300AC4D67 /* LaunchScreen.storyboard in Resources */,
 				F4298E342103055300AC4D67 /* Assets.xcassets in Resources */,
 				F4298E322103055200AC4D67 /* Main.storyboard in Resources */,
@@ -174,9 +184,11 @@
 				F4D11E2B210640C800679403 /* WaveView.swift in Sources */,
 				F4298E3F21032EFA00AC4D67 /* BaseVC.swift in Sources */,
 				F4D11E2D210647E600679403 /* WaveDemoVC.swift in Sources */,
+				F40B99B7210737B100D77876 /* HamburgerDemoVC.swift in Sources */,
 				F4298E2D2103055200AC4D67 /* AppDelegate.swift in Sources */,
 				F4AD6ECE2106037E007F76FF /* Extension + CGPoint.swift in Sources */,
 				F46495ED2105A9520038C3F0 /* ElasticityDemoVC.swift in Sources */,
+				F40B99B5210732F500D77876 /* HamburgerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
