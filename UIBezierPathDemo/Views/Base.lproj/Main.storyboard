@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="-1318" y="718"/>
         </scene>
-        <!--View Controller-->
+        <!--Elasticity DemoVC-->
         <scene sceneID="zTR-Ul-3v8">
             <objects>
-                <viewController id="y3X-iJ-b1x" sceneMemberID="viewController">
+                <viewController id="y3X-iJ-b1x" customClass="ElasticityDemoVC" customModule="UIBezierPathDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="03l-YY-WYi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OoZ-GW-Mgx" firstAttribute="top" secondItem="3jk-Lo-FF0" secondAttribute="bottom" constant="90" id="KvU-If-ojW"/>
                             <constraint firstItem="3jk-Lo-FF0" firstAttribute="centerX" secondItem="Pc8-12-jDe" secondAttribute="centerX" id="oJ7-XS-u4P"/>
@@ -277,13 +277,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4KJ-bX-jbt">
                                         <rect key="frame" x="0.0" y="158.5" width="355" height="30"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="fS4-8g-xm1">
+                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="fS4-8g-xm1">
                                                 <rect key="frame" x="-2" y="0.0" width="166.5" height="31"/>
                                                 <connections>
                                                     <action selector="ptValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vpm-ju-klJ"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-IF-EQ4">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-IF-EQ4">
                                                 <rect key="frame" x="190.5" y="0.0" width="166.5" height="31"/>
                                                 <connections>
                                                     <action selector="ptValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ofg-Tz-P3U"/>
@@ -330,6 +330,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="4KJ-bX-jbt" firstAttribute="leading" secondItem="845-0U-hl2" secondAttribute="leading" id="4EL-lE-Qw7"/>
                                     <constraint firstItem="qNa-dI-Tps" firstAttribute="leading" secondItem="845-0U-hl2" secondAttribute="leading" id="J5V-2f-XYX"/>
                                     <constraint firstItem="yzn-Sv-IwU" firstAttribute="width" secondItem="QJz-4S-uc5" secondAttribute="width" id="LfA-31-5Ez"/>
                                     <constraint firstItem="QJz-4S-uc5" firstAttribute="leading" secondItem="845-0U-hl2" secondAttribute="leading" id="MbE-Da-atQ"/>
@@ -338,6 +339,7 @@
                                     <constraint firstItem="bHZ-Vc-MX7" firstAttribute="width" secondItem="4KJ-bX-jbt" secondAttribute="width" id="b3F-aa-mdP"/>
                                     <constraint firstItem="io5-T9-aM1" firstAttribute="trailing" secondItem="85v-aA-diT" secondAttribute="trailing" id="cMW-xE-qLm"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="cY9-5h-G18"/>
+                                    <constraint firstAttribute="trailing" secondItem="4KJ-bX-jbt" secondAttribute="trailing" id="fAK-7S-5Ik"/>
                                     <constraint firstItem="bHZ-Vc-MX7" firstAttribute="height" secondItem="4KJ-bX-jbt" secondAttribute="height" id="fX5-di-YrR"/>
                                     <constraint firstItem="Sna-xG-Lia" firstAttribute="width" secondItem="qNa-dI-Tps" secondAttribute="width" id="h6k-Uc-UOd"/>
                                     <constraint firstItem="yzn-Sv-IwU" firstAttribute="height" secondItem="QJz-4S-uc5" secondAttribute="height" id="i9C-cz-2zC"/>

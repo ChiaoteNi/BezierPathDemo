@@ -18,9 +18,8 @@ class BaseVC: UIViewController {
         closeBtn.setTitle("", for: .normal)
         closeBtn.setImage(#imageLiteral(resourceName: "closeBtn"), for: .normal)
         closeBtn.frame = CGRect(x: UIScreen.main.bounds.width - 30, y: 30, width: 20, height: 20)
-        view.addSubview(closeBtn)
-        
         closeBtn.addTarget(self, action: #selector(close), for: UIControlEvents.allEvents)
+        view.insertSubview(closeBtn, at: 0)
         // Do any additional setup after loading the view.
     }
 

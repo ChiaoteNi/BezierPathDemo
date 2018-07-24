@@ -37,8 +37,12 @@ class WaveView: UIView {
         setup()
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        baseY = rect.height * (1 - progress)
+    }
+    
     private func setup() {
-        baseY = frame.height * (1 - progress)
         backgroundColor = UIColor.white.withAlphaComponent(0.2)
         
         backLayer.fillColor = UIColor(red: 113/255.0, green: 205/255.0, blue: 250/255.0, alpha: 0.4).cgColor
@@ -48,7 +52,7 @@ class WaveView: UIView {
         layer.addSublayer(frontLayer)
         
         displayLink = CADisplayLink(target: self, selector: #selector(updatePath))
-        displayLink.add(to: .main, forMode: .defaultRunLoopMode)
+        displayLink.add(to: .current, forMode: .defaultRunLoopMode)
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(changeBaseY(gesture:)))
         addGestureRecognizer(gesture)

@@ -12,10 +12,9 @@ class ElasticityView: UIView {
     
     private var shapeLayer: CAShapeLayer = CAShapeLayer()
     private var pointView: UIView = UIView()
-    
-    private var strPoint: CGPoint!
-    private var originPoint: CGPoint!
     private var displayLink: CADisplayLink!
+    
+    private var originPoint: CGPoint!
     
     deinit {
         displayLink.isPaused = true
@@ -49,7 +48,7 @@ class ElasticityView: UIView {
         shapeLayer.fillColor = UIColor.clear.cgColor
         layer.addSublayer(shapeLayer)
         
-        pointView.backgroundColor = UIColor.red //這邊可以設定顏色把控制點可視化/不可視化
+        pointView.backgroundColor = UIColor.orange
         addSubview(pointView)
         
         displayLink = CADisplayLink(target: self, selector: #selector(updateLayer))
@@ -61,15 +60,11 @@ class ElasticityView: UIView {
     
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
         switch gesture.state {
-        case .began:
-            strPoint = gesture.translation(in: self)
-            displayLink.isPaused = true
         case .changed:
-            let currPt = gesture.translation(in: self)
-            let ptOffset = currPt - strPoint
-            pointView.center = originPoint + ptOffset
+            displayLink.isPaused = true
+            pointView.center = gesture.location(in: self)
             updateLayer()
-        case .ended, .cancelled, .failed:
+        case .began, .ended, .cancelled, .failed:
             displayLink.isPaused = false
             
             UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.1, initialSpringVelocity: 0, options: .allowUserInteraction, animations: {
@@ -81,42 +76,17 @@ class ElasticityView: UIView {
     
     @objc private func updateLayer() {
         guard let ctrlPoint = pointView.layer.presentation()?.position else { return }
+        
+        let origin = CGPoint(x: 0, y: frame.height)
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: frame.width, y: 0))
-        path.addLine(to: CGPoint(x: frame.width,
-                                 y: frame.height))
-        path.addQuadCurve(to: CGPoint(x: 0, y: frame.height),
+        
+        path.move(to: origin)
+        path.addQuadCurve(to: CGPoint(x: frame.width, y: origin.y),
                           controlPoint: ctrlPoint)
+        path.addLine(to: CGPoint(x: frame.width, y: 0))
+        path.addLine(to: CGPoint(x: 0, y: 0))
         path.close()
+        
         shapeLayer.path = path.cgPath
     }
-
-//    @objc private func updateLayer() {
-//        guard let ctrlPoint = pointView.layer.presentation()?.position else { return }
-//
-//        let height = frame.size.height
-//        let width = frame.size.width
-//
-//        let path = UIBezierPath()
-//        path.move(to: CGPoint(x: 0, y: 0))
-//        path.addLine(to: CGPoint(x: width, y: 0))
-//        path.addLine(to: CGPoint(x: width, y: height))
-//        path.addLine(to: CGPoint(x: width - 20, y: height))
-//
-//        let pt1 = CGPoint(x: width - 50, y: height)
-//        let pt2 = CGPoint(x: width - 100, y: ctrlPoint.y * 0.5)
-//        path.addCurve(to: CGPoint(x: ctrlPoint.x + 100, y: ctrlPoint.y * 0.8), controlPoint1: pt1, controlPoint2: pt2)
-//
-//        path.addQuadCurve(to: CGPoint(x: ctrlPoint.x - 100, y: ctrlPoint.y * 0.8), controlPoint: ctrlPoint)
-//
-//        let pt3 = CGPoint(x: 100, y: ctrlPoint.y * 0.5)
-//        let pt4 = CGPoint(x: 50, y: height)
-//        path.addCurve(to: CGPoint(x: 20, y: height), controlPoint1: pt3, controlPoint2: pt4)
-//
-//        path.addLine(to: CGPoint(x: 0, y: height))
-//        //        path.addQuadCurve(to: CGPoint(x: 0, y: height), controlPoint: ctrlPoint)
-//        path.close()
-//        shapeLayer.path = path.cgPath
-//    }
 }

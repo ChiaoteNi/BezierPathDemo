@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WaveDemoVC: UIViewController {
+class WaveDemoVC: BaseVC {
 
     @IBOutlet weak var waveView: WaveView!
     
@@ -26,11 +26,9 @@ class WaveDemoVC: UIViewController {
     @IBAction func addWaterBtnDidPressed(_ sender: UIButton) {
         let shouldIncrease = waveView.progress < 0.9
         
-        print(waveView.progress)
-        
-        let ratio: CGFloat = 10000
-        
+        let ratio: CGFloat = 5000
         let runTimes = abs(Int(waveView.progress * ratio) - (shouldIncrease ? Int(ratio) : 0))
+        
         for _ in 0 ..< runTimes {
             DispatchQueue.global().async {
                 usleep(30000)

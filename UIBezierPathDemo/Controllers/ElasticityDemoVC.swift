@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ElasticityDemoVC: UIViewController {
+class ElasticityDemoVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
