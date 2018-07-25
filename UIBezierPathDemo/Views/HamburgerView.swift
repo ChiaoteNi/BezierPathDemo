@@ -28,6 +28,7 @@ class HamburgerView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
+//        super.draw(rect)
         shapeLayer.frame = rect
         shapeLayer.path = getHamburgerPath().cgPath
     }
@@ -66,16 +67,16 @@ class HamburgerView: UIView {
     private func getArrorPath() -> UIBezierPath {
         let path = UIBezierPath()
         let arrorPt = CGPoint(x: 0, y: bounds.height / 2)
-        
+
         path.move(to: arrorPt)
         path.addLine(to: CGPoint(x: bounds.height / 2 * 1.3, y: 0))
-        
+
         path.move(to: arrorPt)
         path.addLine(to: CGPoint(x: bounds.height / 2 * 1.3, y: bounds.height))
-        
+
         path.move(to: arrorPt)
         path.addLine(to: CGPoint(x: bounds.width, y: arrorPt.y))
-        
+
         return path
     }
 }

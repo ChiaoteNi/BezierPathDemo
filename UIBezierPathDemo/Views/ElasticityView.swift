@@ -10,8 +10,8 @@ import UIKit
 
 class ElasticityView: UIView {
     
-    private var shapeLayer: CAShapeLayer = CAShapeLayer()
-    private var pointView: UIView = UIView()
+    private let shapeLayer: CAShapeLayer = CAShapeLayer()
+    private let pointView: UIView = UIView()
     private var displayLink: CADisplayLink!
     
     private var originPoint: CGPoint!
@@ -32,6 +32,7 @@ class ElasticityView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
         let width: CGFloat = 2
         originPoint = CGPoint(x: (rect.width) / 2, y: rect.height)
         pointView.center = originPoint
@@ -47,7 +48,7 @@ class ElasticityView: UIView {
         layer.addSublayer(shapeLayer)
         
         // 做彈跳效果用
-        pointView.backgroundColor = .clear
+        pointView.backgroundColor = .black
         addSubview(pointView)
         
         displayLink = CADisplayLink(target: self, selector: #selector(updateLayer))

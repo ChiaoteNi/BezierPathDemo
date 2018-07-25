@@ -53,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4262C3A210816760013631A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F4AD6ECD2106037E007F76FF /* Extension + CGPoint.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		F4298E202103055200AC4D67 = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +85,7 @@
 				F4298E382103055300AC4D67 /* Info.plist */,
 				F46495EA2105A91B0038C3F0 /* Controllers */,
 				F46495EB2105A9280038C3F0 /* Views */,
-				F4AD6ECD2106037E007F76FF /* Extension + CGPoint.swift */,
+				F4262C3A210816760013631A /* Extension */,
 			);
 			path = UIBezierPathDemo;
 			sourceTree = "<group>";

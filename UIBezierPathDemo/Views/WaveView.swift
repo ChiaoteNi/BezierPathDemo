@@ -43,7 +43,7 @@ class WaveView: UIView {
     }
     
     private func setup() {
-        backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
         
         backLayer.fillColor = UIColor(red: 113/255.0, green: 205/255.0, blue: 250/255.0, alpha: 0.4).cgColor
         layer.addSublayer(backLayer)
@@ -53,6 +53,7 @@ class WaveView: UIView {
         
         displayLink = CADisplayLink(target: self, selector: #selector(updatePath))
         displayLink.add(to: .current, forMode: .defaultRunLoopMode)
+        displayLink.preferredFramesPerSecond = 30
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(changeBaseY(gesture:)))
         addGestureRecognizer(gesture)
@@ -64,7 +65,7 @@ class WaveView: UIView {
     }
     
     @objc private func updatePath() {
-        if spac == CGFloat.pi * 100 {
+        if spac >= CGFloat.pi * 100 {
             spac = 0
         } else {
             spac += 2 // 控制速度
@@ -73,10 +74,11 @@ class WaveView: UIView {
         let origin = CGPoint(x: 0, y: baseY)
         let frontPath = UIBezierPath()
         let backPath = UIBezierPath()
+        
         frontPath.move(to: origin)
         backPath.move(to: origin)
         
-        for x in 0 ..< Int(bounds.width) {
+        for x in 0 ..< Int(bounds.width) where x % 2 == 0 {
             let frontX = (CGFloat(x) - spac) * 0.015 // 控制波長
             let frontY = baseY - sin(frontX) * 6 // 控制振幅
             frontPath.addLine(to: CGPoint(x: CGFloat(x), y: frontY))
